@@ -9,9 +9,12 @@ var db = new sqlite3.Database('./store.sqlite3')
 // Routes
 router.get('/users', function (req, res) {
   db.serialize(function () {
-    db.all('')
-    // Your db code goes here, see SQLite3 library docs...
-
+    db.all('SELECT * FROM users', (error, rows) => {
+        // res.json(rows)
+        res.render('table.html', {
+          users: rows
+        })
+    })
   })
 })
 
