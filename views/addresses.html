@@ -1,0 +1,25 @@
+<h1>Addresses Table</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for address in addresses %}
+        <tr>
+            <td>{{address.id}}</td>
+            <td>{{address.user_id}}</td>
+            <td>{{address.street}}</td>
+            <td>{{address.city}}</td>
+            <td>{{address.state}}</td>
+            <td>{{address.zip}}</td>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
